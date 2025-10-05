@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cjeyays8qlw8v"]
 
-[ext_resource type="Script" uid="uid://b1q5pi5pahqac" path="res://scripts/crosswalk.gd" id="1_ej67m"]
+[ext_resource type="Script" path="res://scripts/crosswalk.gd" id="1_ej67m"]
 [ext_resource type="Texture2D" uid="uid://5ats5gm1vpxn" path="res://assets/textures/tileset.png" id="1_of5us"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ej67m"]

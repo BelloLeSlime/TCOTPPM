@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cy0d1leh6pv1u"]
 
 [ext_resource type="Texture2D" uid="uid://b1fvei0kodok3" path="res://assets/textures/player.png" id="1_jv387"]
-[ext_resource type="Script" uid="uid://c6qd4xdm2ia73" path="res://scripts/asgore.gd" id="1_slw1y"]
+[ext_resource type="Script" path="res://scripts/asgore.gd" id="1_slw1y"]
 [ext_resource type="AudioStream" uid="uid://c8rpf4wdwlx1n" path="res://assets/musics/Asgore.ogg" id="2_slw1y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_danve"]

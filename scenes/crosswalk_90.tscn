@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cj24bvvxn00g8"]
 
-[ext_resource type="Script" uid="uid://b1q5pi5pahqac" path="res://scripts/crosswalk.gd" id="1_717bb"]
+[ext_resource type="Script" path="res://scripts/crosswalk.gd" id="1_717bb"]
 [ext_resource type="Texture2D" uid="uid://5ats5gm1vpxn" path="res://assets/textures/tileset.png" id="2_1wegp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ej67m"]
@@ -11,7 +11,7 @@ region = Rect2(86, 86, 16, 16)
 size = Vector2(16, 16)
 
 [node name="Crosswalk" type="Node2D"]
-rotation = -1.5707964
+rotation = -1.5708
 script = ExtResource("1_717bb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
