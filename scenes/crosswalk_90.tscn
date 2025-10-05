@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/crosswalk.gd" id="1_717bb"]
 [ext_resource type="Texture2D" uid="uid://5ats5gm1vpxn" path="res://assets/textures/tileset.png" id="2_1wegp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ej67m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a82lb"]
 atlas = ExtResource("2_1wegp")
 region = Rect2(86, 86, 16, 16)
 
@@ -11,16 +11,25 @@ region = Rect2(86, 86, 16, 16)
 size = Vector2(16, 16)
 
 [node name="Crosswalk" type="Node2D"]
-rotation = -1.5708
+rotation = 1.57079
 script = ExtResource("1_717bb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-texture = SubResource("AtlasTexture_ej67m")
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(2, 5)
+texture = SubResource("AtlasTexture_a82lb")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, 32)
+scale = Vector2(2, 5)
 shape = SubResource("RectangleShape2D_ldxmk")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

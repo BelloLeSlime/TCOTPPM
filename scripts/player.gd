@@ -28,7 +28,7 @@ func _physics_process(_delta):
 		Globals.special_animation_player = "idle_left"
 		asgore = asgore_preload.instantiate()
 		add_child(asgore)
-		asgore.position.x = position.x - 500
+		asgore.position.x = position.x
 		asgore.position.y = position.y
 		asgore_driving()
 	
