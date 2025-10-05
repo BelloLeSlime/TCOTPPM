@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt02xj87ywtyg"
-path="res://.godot/imported/bulip.png-73f48c41e1bf22e3c17c9408ac837bda.ctex"
+uid="uid://8uotfbw1n4eb"
+path="res://.godot/imported/angry.png-b66f40d8f3d69c97fad94613ca5a4711.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cinematics/bulip.png"
-dest_files=["res://.godot/imported/bulip.png-73f48c41e1bf22e3c17c9408ac837bda.ctex"]
+source_file="res://assets/characters/Bello/angry.png"
+dest_files=["res://.godot/imported/angry.png-b66f40d8f3d69c97fad94613ca5a4711.ctex"]
 
 [params]
 

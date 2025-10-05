@@ -8,13 +8,25 @@ var moving = "idle"
 var input_vector = Vector2.ZERO
 var asgore_preload = preload("res://scenes/asgore.tscn")
 var asgore
+var death_cause: String
+var interactable
+
+func dead(death):
+	position.x = 26000
+	position.y = 2500
+	Globals.can_play = true
+	Globals.special_animation_player = null
+	direction = "up"
+	death_cause = death
 
 func asgore_driving():
-	while asgore.position.x > position.x - 150:
+	while asgore.position.x > -150:
 		await get_tree().process_frame
 	Globals.special_animation_player = "idle_left_chockbar"
 	await asgore.crash_car
-	get_tree().quit()
+	Globals.is_touching_road = false
+	dead("asgore")
+	asgore.queue_free()
 
 func _ready():
 	input_vector.x = 0
@@ -22,14 +34,13 @@ func _ready():
 	input_vector = input_vector.normalized()
 
 func _physics_process(_delta):
-	
 	if (Globals.is_touching_road and (not Globals.is_touching_crosswalk)) and Globals.can_play:
 		Globals.can_play = false
 		Globals.special_animation_player = "idle_left"
 		asgore = asgore_preload.instantiate()
 		add_child(asgore)
-		asgore.position.x = position.x
-		asgore.position.y = position.y
+		asgore.position.x = -500
+		asgore.position.y = 0
 		asgore_driving()
 	
 	
@@ -73,6 +84,14 @@ func _input(event):
 			open_map()
 		else:
 			close_map()
+	if event.is_action_pressed("e") and interactable != null and Globals.can_play:
+		if interactable == "Drieux":
+			Dialog.show_dialog(12)
+			await Dialog.dialog_finished
+			if death_cause == "asgore":
+				Dialog.show_dialog(13)
+				await Dialog.dialog_finished
+			position = Vector2(2164, 221)
 
 func open_map():
 	map_open = true
@@ -90,3 +109,11 @@ func close_map():
 	map_open = false
 	Globals.can_play = true
 	$Camera2D.zoom = Vector2(1, 1)
+
+func _on_interact_body_entered(body):
+	if body.name == "Drieux":
+		interactable = "Drieux"
+
+func _on_interact_body_exited(body):
+	if body.name == "Drieux":
+		interactable = null

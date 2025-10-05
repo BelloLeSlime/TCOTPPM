@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt02xj87ywtyg"
-path="res://.godot/imported/bulip.png-73f48c41e1bf22e3c17c9408ac837bda.ctex"
+uid="uid://cdwxdc7oavob3"
+path="res://.godot/imported/nerve.png-69a4b77e7f3df614ac506fd643586538.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cinematics/bulip.png"
-dest_files=["res://.godot/imported/bulip.png-73f48c41e1bf22e3c17c9408ac837bda.ctex"]
+source_file="res://assets/characters/Drieux/nerve.png"
+dest_files=["res://.godot/imported/nerve.png-69a4b77e7f3df614ac506fd643586538.ctex"]
 
 [params]
 

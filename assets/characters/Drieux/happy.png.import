@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt02xj87ywtyg"
-path="res://.godot/imported/bulip.png-73f48c41e1bf22e3c17c9408ac837bda.ctex"
+uid="uid://bermcqhl7wt18"
+path="res://.godot/imported/happy.png-9fbcde7158e40fb66a78020520e6507d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cinematics/bulip.png"
-dest_files=["res://.godot/imported/bulip.png-73f48c41e1bf22e3c17c9408ac837bda.ctex"]
+source_file="res://assets/characters/Drieux/happy.png"
+dest_files=["res://.godot/imported/happy.png-9fbcde7158e40fb66a78020520e6507d.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://g1ug0vktrh3d"]
+[gd_scene load_steps=20 format=3 uid="uid://g1ug0vktrh3d"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_ttiwy"]
+[ext_resource type="Script" uid="uid://nhcy7shc6feo" path="res://scripts/player.gd" id="1_ttiwy"]
 [ext_resource type="Texture2D" uid="uid://b1fvei0kodok3" path="res://assets/textures/player.png" id="2_55bf5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qu6w"]
@@ -157,6 +157,9 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(38, 27.5)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 3
 scale = Vector2(4, 4)
@@ -172,3 +175,12 @@ sprite_frames = SubResource("SpriteFrames_g1dsa")
 animation = &"idle_left_chockbar"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Interact" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact"]
+shape = SubResource("RectangleShape2D_g2els")
+
+[connection signal="body_entered" from="Interact" to="." method="_on_interact_body_entered"]
+[connection signal="body_exited" from="Interact" to="." method="_on_interact_body_exited"]
