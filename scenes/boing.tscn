@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://0p3riehwad45"]
+[gd_scene load_steps=19 format=3 uid="uid://0p3riehwad45"]
 
 [ext_resource type="Texture2D" uid="uid://b1fvei0kodok3" path="res://assets/textures/player.png" id="1_biqke"]
-[ext_resource type="Script" path="res://scripts/boing.gd" id="1_tnp1u"]
+[ext_resource type="Script" uid="uid://dk3eeiuq0bfhe" path="res://scripts/boing.gd" id="1_tnp1u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0ubm"]
 atlas = ExtResource("1_biqke")
@@ -22,6 +22,38 @@ region = Rect2(199, 18, 32, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_qs1g0"]
 atlas = ExtResource("1_biqke")
 region = Rect2(199, 1, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm14v"]
+atlas = ExtResource("1_biqke")
+region = Rect2(133, 1, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lglb"]
+atlas = ExtResource("1_biqke")
+region = Rect2(133, 52, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uka4w"]
+atlas = ExtResource("1_biqke")
+region = Rect2(166, 1, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii3ea"]
+atlas = ExtResource("1_biqke")
+region = Rect2(166, 52, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvkk6"]
+atlas = ExtResource("1_biqke")
+region = Rect2(133, 69, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h8te"]
+atlas = ExtResource("1_biqke")
+region = Rect2(199, 52, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rib3r"]
+atlas = ExtResource("1_biqke")
+region = Rect2(166, 69, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfwir"]
+atlas = ExtResource("1_biqke")
+region = Rect2(199, 69, 32, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gpnxk"]
 animations = [{
@@ -49,6 +81,50 @@ animations = [{
 "loop": true,
 "name": &"open_fridge",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tm14v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lglb")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uka4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii3ea")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvkk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h8te")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rib3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfwir")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ch4x2"]
@@ -66,7 +142,7 @@ script = ExtResource("1_tnp1u")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_gpnxk")
-animation = &"open_fridge"
+animation = &"walk_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)

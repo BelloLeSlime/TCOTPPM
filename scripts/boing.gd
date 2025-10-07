@@ -83,3 +83,38 @@ func _on_dialog_body_entered(body):
 		$AnimatedSprite2D.play("idle")
 		
 		Globals.can_play = true
+		
+		await go_y(1, 10, 1)
+		await go_x(1, 9, 1)
+		await go_y(-1, 7, 1)
+		teleport(76, 14)
+		await go_y(-1, 7)
+		await go_x(-1, 10)
+		teleport(38, 29)
+		await go_x(-1, 10)
+		$AnimatedSprite2D.play("idle")
+
+func go_x(x_direction, tile_count, speed = 1):
+	var distance = tile_count * 16
+	var n = distance / speed
+	if x_direction == 1:
+		$AnimatedSprite2D.play("walk_right")
+	else:
+		$AnimatedSprite2D.play("walk_left")
+	for i in range(n):
+		position.x += x_direction * speed
+		await get_tree().process_frame
+
+func go_y(y_direction, tile_count, speed = 1):
+	var distance = tile_count * 16
+	var n = distance / speed
+	if y_direction == 1:
+		$AnimatedSprite2D.play("walk_down")
+	else:
+		$AnimatedSprite2D.play("walk_up")
+	for i in range(n):
+		position.y += y_direction * speed
+		await get_tree().process_frame
+
+func teleport(tile_x, tile_y):
+	position = Vector2(tile_x, tile_y) * 16
